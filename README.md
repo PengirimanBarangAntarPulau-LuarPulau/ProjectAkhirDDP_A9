@@ -100,12 +100,27 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
  
  **7  . Halaman Top Up Saldo** <br>
  <img width="2496" height="5492" alt="FW TOP UP SALDO drawio" src="https://github.com/user-attachments/assets/af88e5fa-d7ac-40e8-941d-1d4ebd2f81e5" /> <br>
+: Flowchart pada halaman ini akan menampilkan top up saldo <br>
+  `Tampilkan kurs dan saldo` <br>
+  akan menampilkan kurs 1 MC dan saldo saat ini <br>
+  `Input nominal rupiah` <br>
+  jika yang diinput adalah selain angka, 0 atau lebih dari 11.000.000 maka top up akan dibatalkan dan kembali ke halaman awal <br>
+  `MC didapat` <br>
+  akan menampilkan jumlah MC yang didapat cust dengan nominal / 1.000 <br>
+  `Tampilkan konfirmasi` <br>
+  akan menampilkan konfirmasi berupa nominal yang harus dibayar, MC yang akan didapat dan total saldo setelahnya <br>
+  `Melanjutkan transaksi top up` <br>
+  jika user memilih lanjut maka saldo MC akan otomatis tertambah dengan MC yang didapat, sedangkan jika tidak maka transaksi akan dibatalkan dan dikembalikan ke page awal <br>
+  `Menyimpan data` <br>
+  akan menyimpan data saldo terbaru ke users.json <br>
+  `Cetak struk` <br>
+  akan mencetak struk bukti top up dengan status berhasil <br>
+  `Kembali ke halaman awal` <br>
 
 # CODE PROGRAM
 **HALAMAN LOGIN / REGISTRASI** <br>
 **`Function`**
 <img width="1028" height="1672" alt="code-snapshot12" src="https://github.com/user-attachments/assets/9cc79225-a29e-4243-b12d-c4b8180fa2c7" /> <br>
-
 
 
 
