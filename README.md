@@ -20,7 +20,10 @@
 
 **2. Halaman Admin** <br>
 <img width="5152" height="6736" alt="FW ADMIN drawio" src="https://github.com/user-attachments/assets/f0d6e0a7-e016-497a-8977-bd10f4941cf1" /> <br>
-: Flowchart pada halaman ini akan menampilkan
+: Flowchart pada halaman ini akan menampilkan menu CRUD penuh, menu tambahan validasi pengajuan dan pilihan logout.
+  `Pilihan 1`
+  
+
 **3. Halaman Customer** <br>
  <img width="4412" height="5012" alt="FW CUST drawio" src="https://github.com/user-attachments/assets/341906e5-e3a1-43b7-bda3-ee90fe58f0b8" /> <br>
  **4. Halaman Validasi Pengiriman** <br>
