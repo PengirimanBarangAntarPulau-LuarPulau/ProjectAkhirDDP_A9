@@ -205,7 +205,9 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 <img width="846" height="1070" alt="aju 5" src="https://github.com/user-attachments/assets/dc6f4f2e-b6f8-4f80-b4ba-b209cabc17c4" /> <br>
 : lalu semua data disimpan pada variabel `pengiriman_baru`. 
 
+**14. Pengiriman walk-in** <br>
 
+: function ini digunakan untuk mengajukan pengiriman oleh admin atau walk in. Menggunakan `while True` admin menginput nama pemesan, no hp berat barang, dan kota tujuan. Dengan syarat nama pemesan tidak boleh angka dan kosong, no hp tidak boleh huruf dan 0, berat tidak lebih dari 30kg dan harus berupa angka, serta kota tujuan harus ada di daftar dan tidak boleh kosong. Jika persyaratan tadi tidak terpenuhi, maka program akan kembali melooping agar admin memasukkan data baru yang sesuai. Jika sudah sesuai, maka `data_paket` akan tertambah di `file_pengiriman`. Setelahnya akan diproses total biaya pengiriman dan dicetak struk rincian biaya dan `status_bayar` juga `status_paket`. <br>
 
 
 
