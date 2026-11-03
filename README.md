@@ -15,8 +15,8 @@
 
 # FLOWCHART
 **1. Halaman Login dan Registrasi** <br>
-<img width="6292" height="4652" alt="FW LOGIN" src="https://github.com/user-attachments/assets/7644528d-99ca-4990-aa82-d0b66a3506aa" /> <br>
-: Flowchart pada halaman ini akan menampilkan menu utama yang berisi login, registrasi, dan keluar. Setelah dipilih salah satunya maka akan diarahkan ke halaman khusus sesuai pilihannya, namun jika pilihan tidak termasuk 1-3 maka akan dikembalikan ke tampilan menu utama. <br> 
+<img width="6292" height="4652" alt="login baru drawio" src="https://github.com/user-attachments/assets/5978b166-0b29-43fb-a4df-fcc4850eb3d2" /><br>
+: Flowchart pada halaman ini akan menampilkan menu utama yang berisi login, registrasi, dan keluar. Setelah berhasil login atau registrasi maka akan delay 3detik terlebih dahulu baru diarahkan ke halaman menu sesuai role. <br> 
 
 **2. Halaman Admin** <br>
 <img width="5152" height="6736" alt="fwadm drawio" src="https://github.com/user-attachments/assets/e610264e-f27c-468b-867b-431ee855e82b" /> <br>
@@ -118,7 +118,7 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
   `Kembali ke halaman awal` <br>
 
 # CODE PROGRAM
-**Import Library** <br>
+**1. Import Library** <br>
 <img width="1060" height="532" alt="library" src="https://github.com/user-attachments/assets/063e5c36-5bbd-4dcc-b80e-718d2d58808d" /><br>
 : pada projek ini kami menggunakan 4 library dan json. <br>
 - `os` kami gunakan untuk mengecek keberadaan file, menghapus file, dan membersihkan terminal. <br>
@@ -127,58 +127,87 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 - `prettytable` kami gunakan agar saat menampilkan data pengiriman agar lebih rapi dan enak dipandang. <br>
 - `time` kami gunakan untuk loading ketika pengguna berhasil login. <br>
 
-**Error Handling
+**3. Error Handling Awal** <br>
+<img width="1060" height="494" alt="error handling awal" src="https://github.com/user-attachments/assets/d244078f-c60a-4064-92f1-ad8fb44396b9" /> <br>
+: pada error handling awal ini kami gunakan sebagai antisipasi agar program tetap bisa berjalan meskipun modul/fungsi `hapus_data` belum tersedia atau gagal diimpor. <br>
+
+**4. Inisialisasi Data** <br>
+<img width="1060" height="494" alt="error handling awal" src="https://github.com/user-attachments/assets/86a6be0b-e985-4eee-9bfb-95a4696f66a0" /> <br>
 - `file_user = "user.json"` untuk menginisialisasi variabel file_user sebagai tempat menyimpan dan membaca data pengguna. <br>
 - `file_pengiriman = "pengiriman.json"` untuk menginisialisasi variabel file_pengiriman sebagai tempat menyimpan dan membaca data pengiriman. <br>
 
-**List Lokasi / Data Lokasi** <br>
+**5. List Lokasi / Data Lokasi** <br>
 <img width="1060" height="608" alt="image" src="https://github.com/user-attachments/assets/63249340-dde6-4dab-b86e-79d8163945d1" /> <img width="1060" height="646" alt="image" src="https://github.com/user-attachments/assets/db18df5c-44f7-4596-aa12-389d2eda8278" /> <br>
 : menggunakan list agar data bersifat tetap dan tidak dapat diubah. <br>
 
-**List Tarif** <br>
+**6. List Tarif** <br>
 <img width="1060" height="532" alt="image" src="https://github.com/user-attachments/assets/2aa5e8c0-f836-4084-8c89-987543ea55af" /> <br>
 : menggunakan list agar data bersifat tetap dan tidak dapat diubah. <br>
 
 # FUNCTION
-**Bersihkan Layar** <br>
+**1. Bersihkan Layar** <br>
 <img width="1060" height="532" alt="image" src="https://github.com/user-attachments/assets/131035c9-2da1-46db-904e-d73ccf4fa1fe" /> <br>
 : function ini digunakan untuk membersihkan layar terminal dengan menggunakan `os`. <br>
 
-**Baca File** <br>
+**2. Loading Dashboard** <br>
+<img width="1060" height="912" alt="loading dashboard" src="https://github.com/user-attachments/assets/085bf393-7f2a-4f07-8acf-16497b0fd555" /> <br>
+: pada function ini ketika pengguna berhasil login/registrasi maka akan ditampilkan delay selama 3detik terlebih dahulu baru diarahkan lanjut ke menu sesuai role. <br>
+
+**3. Baca File** <br>
 <img width="1060" height="798" alt="image" src="https://github.com/user-attachments/assets/ed54eec3-12de-47c1-8806-df415b1e4433" /> <br>
 : function ini untuk membaca data pada file json, dengan menggunakan error handling jika data tidak ditemukan maka func ini akan memuat ulang data awal dan mengembalikannya. Jika data ada maka akan dibaca dan ditampilkan. <br>
 
-**Simpan File** <br>
+**4. Simpan File** <br>
 <img width="1060" height="798" alt="image" src="https://github.com/user-attachments/assets/e387b97d-f49e-4d36-afee-071687c069f1" /> <br>
 : function ini mengguna json.dump untuk menyimpan data terbaru kepada file json. <br>
 
-**Format Rupiah** <br>
+**5. Format Rupiah** <br>
 <img width="1060" height="494" alt="image" src="https://github.com/user-attachments/assets/20485951-b2a6-46d1-b669-2a5448d0fdfe" /> <br>
 : function ini digunakan untuk mengubah angka selain nol ke format rupiah dengan pemisah ribuan berupa titik dan juga mengubah koma menjadi titik. function ini juga mengecek apabila inputan berupa angka nol maka akan langsung dikembalikan menjadi rupiah 0. <br>
 
-**Generate Resi / Cetak Struk** <br>
+**6. Generate Resi / Cetak Struk** <br>
 <img width="1060" height="646" alt="image" src="https://github.com/user-attachments/assets/9484b132-919e-4bb1-aac6-d1920feb09c1" /> <br>
 : function ini digunakan untuk membuat nomor resi otomatis, dengan menggunakan perulangan while true, akan dibentuk nomor resi dengan awalan EXP dan 3 digit dibelakangnya dan diawali 0, dan apabila nomor resi sudah digunakan maka akan diganti dengan yang baru yang belum pernah tersimpan. <br>
 
-**Cari di Tuple** <br>
+**7. Cari di Tuple** <br>
 <img width="1060" height="570" alt="code-snapshot9" src="https://github.com/user-attachments/assets/914578b7-d5dd-453d-ba4d-756a36f56be6" /> <br>
 : function ini digunakan untuk mencari item pada daftar tuple, sistem akan terus mencari hingga menemukan kecocokan antara item dan tujuan input. `.stip()` digunakan untuk menghapus spasi di awal dan di akhir teks, `.lower()` digunakan untuk mengubah teks menjadi lowercase semua. <br>
 
-**Cetak Struk** <br>
+**8. Cetak Struk** <br>
 <img width="961" height="1600" alt="image" src="https://github.com/user-attachments/assets/ac35857a-08ff-4db6-a901-813ccf734ede" /> <br>
 : function ini digunakan untuk mencetak bukti struk dengan `biaya_MC` didapat dari `total_biaya` dimulai dari angka 0. `Tarif_MC` didapat dari data `tarif_per_kg` dimulai dari angka 0. Setelahnya print struk bukti pengiriman yang berisi ID Resi, Username Akun, Nama Pemesan, Nomor HP, Kota Tujuan, Berat Barang, Jenis Rute, Tarif per kg, Total biaya MC, Status Pembayaran dan Status Pengiriman. <br>
 
-**Registrasi** <br>
+**9. Registrasi** <br>
 <img width="1028" height="2280" alt="code-snapshot11" src="https://github.com/user-attachments/assets/bcfddbcc-7c24-43d1-8ced-34dc65aeef83" /> <br> 
 : function ini digunakan untuk registrasi akun user yang baru, dimana meminta input username baru, jika user menginput selain alphabet maka dibatalkan dengan validasi `KeyboardInterrupt`, dan return jika username yang diinput kosong. Jika username ada di data username, maka di print `Username sudah dipakai` dan return. User diminta menginput password baru dengan syarat password harus lebih dari 4 karakter atau registrasi dibatalkan. Setelahnya `data_user` akan ditambahkan ke file dengan dictionary `username, password, role dan saldo`. <br>
 
-**Login** <br>
+**10. Login** <br>
 <img width="1028" height="1672" alt="code-snapshot12" src="https://github.com/user-attachments/assets/b79fd3b3-48b3-40e0-ad79-4dca7fde59d4" /> <br>
 : function ini digunakan untuk login pengguna. User menginput username, jika salah maka login dibatalkan, jika benar selanjutnya user menginput password menggunakan `pwinput` dan akan dibatalkan jika salah. Jika username dan password yang diinput benar, dan saldo tidak ditemukan di data maka `saldo = 0`. Setelahnya di print username dan role, namun jika tidak sesuai maka program akan `direturn` dan diprint status `username atau password salah`. <br>
 
-**Top up saldo** <br>
+**11. Top up saldo** <br>
 <img width="1028" height="4522" alt="code-snapshot13" src="https://github.com/user-attachments/assets/3cfa3e22-ef03-463a-9d34-e5ca04eed242" /> <br>
 : function ini digunakan untuk top up saldo user. `saldo_sekarang` didapat dari data saldo dimulai dari angka 0. Menggunakan `while True` user menginput nominal rupiah yang ingin di top up, jika user menginput angka 0 atau selain angka maka program akan berhenti dan top up dibatalkan. Jika nominal yang diinput tidak berupa kelipatan dan lebih dari 11.000.000, maka top up akan dibatalkan. Setelahnya user akan konfirmasi `Nominal Bayar, MC Didapat, Total Saldo`, jika ya maka saldo user akan otomatis tertambah dan disimpan di 	`data_user`, namun jika tidak maka top up akan dibatalkan. <br>
+
+**12. Tampilkan Data** <br>
+<img width="700" height="3534" alt="tampilkan data" src="https://github.com/user-attachments/assets/a7250740-007f-4907-81e2-5e89ed99ce0b" /> <br>
+: pada function ini kami gunakan untuk menampilkan data pengiriman sesuai dengan rolenya, jika user maka akan divalidasi apakah usernamenya sesuai dengan data user, jika ya makaa akan ditampikan data pengirimannya, jika admin maka akan ditampilkan data pengiriman semua. tampilan data menggunakan prettytable agar lebih rapi. <br>
+
+**13. Ajukan Pengiriman User** <br>
+<img width="846" height="2050" alt="aju 1" src="https://github.com/user-attachments/assets/b4450fbb-2254-4863-b425-8489cd15eb87" /> <br>
+: akan dilakukan input form terlebih dahulu dan akan ditampilkan saldo mc dari user tsb, dan ada error handling dimana jika inputan kosong maka akan otomatis diarahkan untuk mengisi kembali, contohnya seperti pada inputan nomor hp, jika inputan bukan berupa angka lebih daripada 0 maka akan ditampilkan bahw inputan harus berupa angka lebih daripada 0 dan diarahkan untuk mengisi kembali hingga inputan sesuai. <br>
+<img width="846" height="1546" alt="aju 2" src="https://github.com/user-attachments/assets/aff85683-e26f-43de-8e86-61ad5539f50a" /> <br>
+: lanjutannya akan menyimpan 3 variable yaitu `id_resi`, `kota_antar`, `kota_luar`. dan juga pda bagian ini dilakukan validasi berat barang, dimana jika berat barang tidak sesuai atau lebih dari 30, maka akan ditampilkan bahwa pengiriman ditolak dan data disimpan pada `simpan_file`. <br>
+<img width="846" height="1434" alt="aju 3" src="https://github.com/user-attachments/assets/0396a9e5-06d3-49f8-824e-7f2ecd4071e0" /> <br>
+: setelahnya adalah validasi kota tujuabn, jika tujuan tidak ada pada list kota tujuan maka akan ditampiulkan pengiriman ditolak dan disimpan. kemudian perhitungan total biaya sesuai dengan kota tujuan. <br>
+<img width="846" height="2330" alt="aju 4" src="https://github.com/user-attachments/assets/f48d4d56-aa00-4986-9b85-d6e63ec43c19" /> <br>
+: lanjutannya yaitu menampilkan rincian struk pesanan dan validasi pembayaran user, apabila saldo user tidak mencukupi maka akan user akan ditawarkan untuk melakukan top up terlebih dahulu. jika saldo user mencukupi maka user akan diberikan pilihan untuk memotong atau membayar ya atau tidak, jika ya maka saldo akan otomatis berkurang, setelah pembayaran berhasil akan ditampilkan status bahwa pembayaran berhasil. <br>
+<img width="846" height="1070" alt="aju 5" src="https://github.com/user-attachments/assets/dc6f4f2e-b6f8-4f80-b4ba-b209cabc17c4" /> <br>
+: lalu semua data disimpan pada variabel `pengiriman_baru`. 
+
+
+
+
 
 # OUTPUT PROGRAM
 **Menu Login** <br>
