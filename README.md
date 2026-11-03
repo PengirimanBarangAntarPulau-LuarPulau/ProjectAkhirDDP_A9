@@ -222,8 +222,28 @@ admin menginput ID resi yang ingin divalidasi (dengan syarat ID resi harus ada d
 program akan menjalankan eksekusi_validasi untuk seluruh paket yang ada di dalam antrian secara otomatis, menyimpannya ke file, dan menampilkan pesan bahwa seluruh pengajuan berhasil divalidasi. <br>
 
 **17. Eksekusi validasi** <br>
-
+<img width="846" height="2246" alt="Eksekusi Validasi" src="https://github.com/user-attachments/assets/fa350ab9-4e81-4e65-81cd-feeb713c91c3" /> <br>
 : function ini digunakan untuk mengeksekusi proses validasi data paket. Program memeriksa apakah berat paket lebih dari 30 kg. Jika melebihi batas, maka status paket langsung diubah menjadi `"Ditolak (Kelebihan Berat > 30 kg)"` dan proses dihentikan. Jika berat memenuhi syarat, program mengecek kota tujuan menggunakan fungsi `cari_di_tuple` ke dalam kategori `Antar Pulau` atau `Luar Pulau.` Jika masuk Antar Pulau / Luar Pulau kategori paket diatur, tarif per kg disesuaikan, total biaya dihitung dari berat * tarif, dan status pembayaran dicek. Jika sudah `"Lunas"`, status paket menjadi `"Diterima (Diproses)"` jika belum, statusnya menjadi `"Diterima (Menunggu Pembayaran)"`. Jika tujuan tidak ditemukan status paket diubah menjadi `"Ditolak (Tujuan Tidak Terjangkau)".` <br>
+
+**18. Ubah Status (Admin)** <br>
+<img width="846" height="2022" alt="Ubah status admin" src="https://github.com/user-attachments/assets/84a8f3f8-7bc3-40d5-b81f-0a70da5f8a48" /> <br>
+: function ini digunakan untuk mengubah status secara manual oleh admin, dimana akan diminta id yang ingin diubah, jika inputan merupakan ctrl atau yang lain maka update akan otomatis dibatalkan dengan keyboardinterupt. stelah input id, jika id ditemukan maka akan diminta untuk memilih antara 3 status, jika id ditemukan sudah berstatus maka tidak akan bisa dilanjutkan. <br>
+
+**19. Hapus Data** <br>
+<img width="846" height="1406" alt="hapus data" src="https://github.com/user-attachments/assets/7603a686-5ae8-4ef8-9543-ac0cbd126a05" /> <br>
+: function ini digunakan untuk menghapus data dari file penyimpanan, dimana akan diminta id yang ingin dihapus terlebih dahulu kemudian diminta validasi kembali apakah yakin ingin menghapus atau tidak, jika ya maka data akan dihapus. <br>
+
+**20. Menu Admin** <br>
+<img width="846" height="2022" alt="menu admin" src="https://github.com/user-attachments/assets/61cf816a-b3a8-459c-9959-8c0908752517" /> <br>
+: menu ini digunakan untuk memanggil function-function pada menu admin sesuai pilihan. <br>
+
+**21. Menu User** <br>
+<img width="846" height="2750" alt="menu user" src="https://github.com/user-attachments/assets/d48a53c5-88a5-4362-b1c6-6641fbf29263" /> <br>
+: menu ini digunkana untuk memanggil function-function pada menu user sesuai pilihan. <br>
+
+**22. Main** <br>
+<img width="846" height="2050" alt="def main" src="https://github.com/user-attachments/assets/e5668a79-c45a-405a-953f-46ba1e36a41f" /> <br>
+: menu yang muncul pertama kali yaitu untuk memanggil function login registrasi dan log out. <br>
 
 # OUTPUT PROGRAM
 **Menu Login** <br>
