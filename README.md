@@ -177,6 +177,85 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 <img width="1028" height="4522" alt="code-snapshot13" src="https://github.com/user-attachments/assets/3cfa3e22-ef03-463a-9d34-e5ca04eed242" /> <br>
 : function ini digunakan untuk top up saldo user. `saldo_sekarang` didapat dari data saldo dimulai dari angka 0. Menggunakan `while True` user menginput nominal rupiah yang ingin di top up, jika user menginput angka 0 atau selain angka maka program akan berhenti dan top up dibatalkan. Jika nominal yang diinput tidak berupa kelipatan dan lebih dari 11.000.000, maka top up akan dibatalkan. Setelahnya user akan konfirmasi `Nominal Bayar, MC Didapat, Total Saldo`, jika ya maka saldo user akan otomatis tertambah dan disimpan di 	`data_user`, namun jika tidak maka top up akan dibatalkan. <br>
 
+# OUTPUT PROGRAM
+**Menu Login** <br>
+<img width="440" height="244" alt="image" src="https://github.com/user-attachments/assets/5f7fdeed-929c-4bf6-903b-6a49635e6f4d" /> <br>
+: Ini merupakan menu awal dari program, dimana pengguna diminta untuk memilih menu yaitu login, registrasi (membuat akun user baru) dan keluar dari program. Jika pengguna tidak memilih menu dari 1-3 atau memasukkan huruf maka program akan terus mengulang sampai dengan pengguna memilih menu 1-3. <br>
+
+**Login** <br>
+<img width="520" height="221" alt="image" src="https://github.com/user-attachments/assets/81a4bc1d-88cd-437a-8152-7bab076e0806" /> <br>
+: Ini merupakan output yang keluar ketika pengguna memilih pilihan 1 (Login) pada menu sebelumnya, dimana selanjutnya pengguna diminta untuk memasukkan username dan password sesuai dengan rolenya (Pada program ini terdapat dua role, yaitu admin dan user). Jika sudah memasukkan username dan juga password maka selanjutnya akan di arahkan ke dashboard masing-masing role. Namun jika pengguna memasukkan username atau password sesuai dengan isi dari file json yang tersimpan maka program akan mengembalikan pengguna ke menu sebelumnya. <br>
+
+**Registrasi (User Baru)** <br>
+<img width="494" height="340" alt="image" src="https://github.com/user-attachments/assets/ba6da592-eac0-4316-8f21-99d039333d95" /> <br>
+: Ini merupakan output yang keluar ketika pengguna memilih pilihan menu ke 2, yaitu menu registrasi dimana pada menu ini pengguna diminta untuk membuat username dan juga password baru. Dan jika sudah melakukan registrasi program akan kembali ke menu sebelumnya dan pengguna bisa melakukan login menggunakan akun yang sudah di buat sebelumnya. <br>
+
+# Role Admin <br>
+**Dashboard Admin** <br>
+: Merupakan output yang keluar ketika kita login sebagai role Admin, dimana pada role ini terdapat CRUD penuh serta menu tambahan validasi pengajuan pengiriman. Di sini pengguna diminta untuk memilih menu dari 1-6, jika tidak program akan terus mengulang dan meminta pengguna untuk tetap memilih menu dari 1-6. <br>
+
+**Data Pengiriman di Admin** <br>
+<img width="975" height="461" alt="image" src="https://github.com/user-attachments/assets/cc47ae03-eb5a-4e19-9511-288c792c87b6" /> <br>
+: Merupakan output yang keluar ketika kita sebagai admin memilih menu 1 (Lihat semua data pengiriman) dimana pada menu ini admin dapat melihat semua data pengiriman yang ada dan ditampilkan dalam prettytable. Jika ingin keluar admin dapat menekan tombol enter dan akan kembali ke dashboard admin lagi. <br>
+
+**Input pengiriman langsung (Secara offline)** <br>
+<img width="513" height="959" alt="image" src="https://github.com/user-attachments/assets/645c4d31-813a-40b5-a046-685f7580166b" /> <br>
+: Merupakan output ketika admin memilih menu ke 2 (Input pengiriman langsung pelanggan offline) pada dashboard admin. Menu ini meminta data dari sang pengirim seperti nama, nomor hp, berat dari barang yang akan dikirim, dan kota tujuan pengirimannya. Jika sudah melakukan pendataan maka akan keluar rincian biaya pengirimannya, disini admin meminta konfirmasi dan jika di konfirmasi maka akan keluar struk bukti pengirimannya dan akan langsung tervalidasi. Namun program akan menolak pengiriman jika dari berat atau lokasi pengiriman tidak sesuai dengan ketentuan dari program tersebut. <br>
+
+**Validasi pengajuan pengiriman** <br>
+<img width="975" height="690" alt="image" src="https://github.com/user-attachments/assets/c45e759f-4082-4178-a06c-5674e7a87c04" /> <br>
+: Ini merupakan output jika admin memilih pilihan menu 3 (Validasi pengajuan pengiriman) dimana pada menu ini admin dapat memvalidasi setiap pengiriman dengan memilih 2 opsi validasi, yaitu; 
+1. Validasi satu per satu berdasarkan ID resi.
+2. Validasi secara otomatis sesuai dengan urutan antrian. <br>
+
+**Update status perjalanan** <br>
+<img width="975" height="727" alt="image" src="https://github.com/user-attachments/assets/087c1fd2-7032-41aa-b757-bc46c4ce0692" /> <br>
+: Merupakan output ketika admin memilih menu 4 (Update status perjalanan pengiriman) dimana pada menu ini admin diminta untuk memasukkan ID resi yang ingin di update status pengirimannya, lalu akan diberikan beberapa pilihan status yaitu;
+1. Sedang dikirim
+2. Sampai tujuan
+3. Batalkan pengiriman
+Disini admin diminta untuk memilih pilihan status tersebut (1/2/3) <br>
+
+**Hapus data pengiriman** <br>
+<img width="975" height="490" alt="image" src="https://github.com/user-attachments/assets/85d15776-ff63-4441-a9a1-9e71bec3bd3b" /> <br>
+: Merupakan output dari menu ke 5 (Hapus data pengiriman) dimana pada menu ini admin dapat menghapus data pengiriman, disini admin diminta untuk memasukkan ID resi yang ingin dihapus datanya, lalu program akan meminta validasi (y/n) untuk memastikan apakah data pengiriman tersebut benar-benar ingin dihapus atau tidak. Jika admin memilih “Y” maka data pengiriman tersebut akan terhapus. <br>
+
+**Logout dari Admin** <br>
+<img width="709" height="596" alt="image" src="https://github.com/user-attachments/assets/4a4a2a7e-66d2-4a95-8ca4-f7cc921caf22" /> <br>
+: Merupakan output yang keluar ketika admin memilih pilihan 6 (logout) program akan langsung kembali ke menu login di awal. <br>
+
+# Role User <br>
+**Dashboard User**
+<img width="538" height="794" alt="image" src="https://github.com/user-attachments/assets/8aa56efc-7168-4ec7-8f0a-a9f40a3d044f" /> <br>
+: Ini merupakan output ketika kita login sebagai role user. Dimana selanjutnya kita di arahkan ke dashboard pengguna dengan menu yang lebih terbatas daripada role admin. Ketika login saldo dari user juga akan ditampilkan. <br>
+
+**Data pengiriman user** <br>
+<img width="975" height="323" alt="image" src="https://github.com/user-attachments/assets/853bf06c-a088-4cc1-803e-b39b37f8eabb" /> <br>
+: Merupakan output ketika user memilih pilihan menu 1 (Cek status pengiriman saya) dimana sesuai dengan namanya user disini hanya bisa melihat data pengiriman yang user itu pesan sendiri. Jika ingin keluar user dapat menekan enter.
+
+**Ajukan pengiriman baru** <br>
+<img width="471" height="1101" alt="image" src="https://github.com/user-attachments/assets/17c0bcef-445d-48f2-b5b6-1b473d2acf28" /> <br>
+: Merupakan output ketika user memilih pilihan menu 2 (Ajukan pengiriman barang baru). Untuk di awal nama pemesan dan juga saldo awal dari user akan langsung di tampilkan lalu untuk data yang akan diisi itu ada nomor hp, berat barang, dan tujuang pengiriman. Jika sudah diisi akan ditampilkan rincian struk pesanan berisi biaya dan user diminta untuk mengonfirmasi pesanan tersebut (y/n). Jika y, maka saldo dari user akan otomatis terpotong jika saldonya mencukupi dan pengajuan pengiriman berhasil dikirim, ID resi pun otomatis terbut. Namun program akan menolak pengiriman jika dari berat atau lokasi pengiriman tidak sesuai dengan ketentuan dari program tersebut. <br>
+
+**Bayar tagihan pengiriman** <br>
+<img width="975" height="357" alt="image" src="https://github.com/user-attachments/assets/6c42fed6-4619-4973-b160-a14004b9aef3" /> <br>
+: Ini merupakan output ketika user memilih pilihan menu 3 (Bayar tagihan pengiriman sesuai struk). Di awal akan di tampilkan semua data pengiriman dari user tersebut dalam prettytable, lalu user diminta untuk memasukkan ID resi dari pengiriman yang ingin di bayar, jika sudah maka akan muncul resi dan total tagihan yang harus dibayar. Disini saldo dari user harus mencukupi untuk bisa membayar pesanannya tersebut, jika belum mencukupi maka user akan di perintahkan untuk top up saldo terlebih dahulu. <br>
+
+**Cetak struk bukti pengiriman** <br>
+<img width="975" height="747" alt="image" src="https://github.com/user-attachments/assets/37feb994-3c5a-4f7d-b05c-01e3f4899942" /> <br>
+ : Ini merupakan output ketika user memilih pilihan 4 (Cetak struk bukti pengiriman). Dimana di awal akan di tampilkan semua data pengiriman yang user tersebut lakukan, lalu user diminta untuk memasukkan ID resi yang ingin di cetak struknya, dan struk dari resi tersebut akan tercetak. Jika sudah user diminta untuk menekan enter untuk kembali ke dashboard kembali. <br>
+
+**Top up saldo** <br>
+<img width="975" height="990" alt="image" src="https://github.com/user-attachments/assets/02cde5a0-3a23-4276-8bea-766cebb27f72" /> <br>
+: Merupakan output ketika user memilih pilihan ke 5 (Top up saldo MC). Untuk 1 MC itu bernilai Rp. 1.000, dan untuk batas dari top up nya sendiri yaitu Rp.11.000.000. Pertama tama user akan diminta untuk mengisi nominal top  up yang mereka inginkan, jika sudah maka program akan meminta konfirmasi dari user (y/n) jika user memilih y maka top akan lanjut dan saldo user akan bertambah sesuai dengan nominal yang user isi tadi. <br>
+
+**Logout dari User** <br>
+<img width="634" height="646" alt="image" src="https://github.com/user-attachments/assets/7e1f7da0-34c4-4077-a005-f2d67564ccb8" /> <br>
+: Ini merupakan output dari pilihan ke 6 (logout) ketika user memilih ini, maka dia langusng kembali ke menu sebelumnya yaitu login. <br>
+
+**Keluar dari program** <br>
+ <img width="659" height="290" alt="image" src="https://github.com/user-attachments/assets/e67eea38-4f7e-401c-9dd0-98027362f107" /> <br>
+: Merupakan output ketika pengguna memilih pilihan 3 (keluar) pengguna akan keluar dan program akan berhenti. <br>
 
 
 
