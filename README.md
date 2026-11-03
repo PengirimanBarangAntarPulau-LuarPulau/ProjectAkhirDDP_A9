@@ -158,12 +158,26 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 : function ini digunakan untuk membuat nomor resi otomatis, dengan menggunakan perulangan while true, akan dibentuk nomor resi dengan awalan EXP dan 3 digit dibelakangnya dan diawali 0, dan apabila nomor resi sudah digunakan maka akan diganti dengan yang baru yang belum pernah tersimpan. <br>
 
 **Cari di Tuple** <br>
-<img width="1060" height="646" alt="image" src="https://github.com/user-attachments/assets/26f6af7b-6740-476d-b47f-3b0b955a1b70" /> <br>
+<img width="1060" height="570" alt="code-snapshot9" src="https://github.com/user-attachments/assets/914578b7-d5dd-453d-ba4d-756a36f56be6" /> <br>
 : function ini digunakan untuk mencari item pada daftar tuple, sistem akan terus mencari hingga menemukan kecocokan antara item dan tujuan input. `.stip()` digunakan untuk menghapus spasi di awal dan di akhir teks, `.lower()` digunakan untuk mengubah teks menjadi lowercase semua. <br>
 
 **Cetak Struk** <br>
 <img width="961" height="1600" alt="image" src="https://github.com/user-attachments/assets/ac35857a-08ff-4db6-a901-813ccf734ede" /> <br>
 : function ini digunakan untuk mencetak bukti struk dengan `biaya_MC` didapat dari `total_biaya` dimulai dari angka 0. `Tarif_MC` didapat dari data `tarif_per_kg` dimulai dari angka 0. Setelahnya print struk bukti pengiriman yang berisi ID Resi, Username Akun, Nama Pemesan, Nomor HP, Kota Tujuan, Berat Barang, Jenis Rute, Tarif per kg, Total biaya MC, Status Pembayaran dan Status Pengiriman. <br>
+
+**Registrasi** <br>
+<img width="1028" height="2280" alt="code-snapshot11" src="https://github.com/user-attachments/assets/bcfddbcc-7c24-43d1-8ced-34dc65aeef83" /> <br> 
+
+**Login** <br>
+<img width="1028" height="1672" alt="code-snapshot12" src="https://github.com/user-attachments/assets/b79fd3b3-48b3-40e0-ad79-4dca7fde59d4" /> <br>
+
+**Top up saldo** <br>
+<img width="1028" height="4522" alt="code-snapshot13" src="https://github.com/user-attachments/assets/3cfa3e22-ef03-463a-9d34-e5ca04eed242" /> <br>
+
+
+
+
+
 
 
 
