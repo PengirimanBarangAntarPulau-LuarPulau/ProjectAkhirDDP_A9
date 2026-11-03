@@ -53,14 +53,34 @@ akan kembali ke halaman login. <br>
  
  **4. Halaman Validasi Pengiriman** <br>
  <img width="7724" height="10092" alt="FW VALIDASI PENGIRIMAN drawio" src="https://github.com/user-attachments/assets/605f43c1-2850-412f-8a5f-637bc57b79c0" /> <br>
- `page user dari page yang berbeda` <br> 
- pengguna mengajukan pengiriman dengan status "menunggu validasi". <br>
- `ketersediaan antrian` <br>
- jika antrian kosong maka tidak ada pengajuan menunggu validasi, tapi jika antrian tidak kosong tampilkan dengan pretty table. <br>
- `pilihan 1` <br>
- akan menampilkan input id resi <br>
- `pilihan 2`
- akan menampilkan eksekusi validasi pada setiap paket di antrian. <br>
+: Flowchart pada bagian ini untuk memvalidasi pengiriman agar tidak ada kesalahan. <br>
+`pemeriksaan antrian pengajuan` <br>
+sistem mengambil data pengajuan dengan status “menunggu validasi” <br>
+jika antrian kosong, sistem akan menampilkan pesan “Tidak ada pengajuan menunggu validasi” <br>
+jika antrain ada, data pengajuan akan ditampilkan lengkap dengan perhitungannya <br>
+`pilihan 1`<br>
+admin menginput id resmi pengiriman <br>
+Jika tidak maka akan menampilkan pesan error : id data tidak ditemukan dan kembali ke menu utama <br>
+jika ya maka sistem akan menjalankan alur eksekusi validasi untuk paket terpilih tersebut <br>
+`pilihan 2`<br>
+sistem akan menjalaknkan eksekusi validasi di antrian secara otomatis satu per satu <br>
+`cek berat paket`<br>
+Status pengiriman langsung berubah menjadi “ditolak (kelebihan berat)” <br>
+`cek tujuan pengiriman`<br>
+jika pengiriman di antar pulau  maka dikenakan tarif Rp. 15.000?kg, dan jika sudah lunas maka status akan berubah menjadi “diterima (diproses)” <br>
+Jika pengiriman di luar pulau maka akan dikenakan tarif Rp.30.000?kg <br>
+Jika tidak ada dalam daftar antar pulau maupun luar pulau, status menjadi "Ditolak (Tujuan tidak terjangkau)". <br>
+`penyimpanan dan hasil validasi`<br>
+hasil validasi disimpan ke databse <br>
+sistem menampilkan hasil validasi kepada admin <br>
+`input data pelanggan dan paket`
+input Nama pengirim/penerima. Jika kosong, sistem meminta input ulang. <br>
+input Kota tujuan. Pengecekan validasi: tidak boleh kosong. <br>
+`proses penentuan ID & rute:` <br>
+sistem membuat (generate) ID resi. <br>
+sistem mengecek status rute kota tujuan (daftar antar pulau / luar pulau. <br>
+`konfirmasi dan penyimpanan` <br>
+sistem menanyakan konfirmasi simpan & proses? (Y/N).
  
  **5. Halaman Pesan Pengiriman** <br>
  <img width="4572" height="10172" alt="FW PESAN PENGIRIMAN drawio" src="https://github.com/user-attachments/assets/5786855d-5ff3-4bfb-a6c2-4e4712682916" /> <br>
@@ -78,7 +98,6 @@ sistem memeriksa apakah saldo MC pengguna mencukupi untuk membayar biaya pengiri
 jika saldo cukup, saldo MC pengguna akan dikurangi, lalu data diperbarui dan disimpan ke file users.json dan pengiriman.json. <br>
  `Selesai & cetak struk` <br>
 sistem menampilkan informasi bahwa transaksi berhasil, menampilkan sisa saldo, dan mencetak struk pengiriman.
-
  
  **6. Halaman Bayar Tagihan** <br>
  <img width="2332" height="6692" alt="FW BAYAR drawio" src="https://github.com/user-attachments/assets/992e6863-d18f-4037-a13a-b0ae124f014c" /> <br>
