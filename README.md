@@ -118,9 +118,61 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
   `Kembali ke halaman awal` <br>
 
 # CODE PROGRAM
-**HALAMAN LOGIN / REGISTRASI** <br>
-**`Function`**
-<img width="1028" height="1672" alt="code-snapshot12" src="https://github.com/user-attachments/assets/9cc79225-a29e-4243-b12d-c4b8180fa2c7" /> <br>
+**Import Library & Inisialisasi** <br>
+<img width="1060" height="608" alt="image" src="https://github.com/user-attachments/assets/de60b85f-fe66-4505-8dfe-61d614ce6263" /> <br>
+: pada projek ini kami menggunakan 4 library dan 2 inisialisasi data. <br>
+- `os` kami gunakan untuk mengecek keberadaan file, menghapus file, dan membersihkan terminal. <br>
+- `json` kami gunakan untuk membaca, mengubah dan menyimpan data. <br>
+- `pwinput` kami gunakan untuk menyembunyikan karakter yang diketik pengguna pada saat menginput password. <br>
+- `prettytable` kami gunakan agar saat menampilkan data pengiriman agar lebih rapi dan enak dipandang. <br>
+- `file_user = "user.json"` untuk menginisialisasi variabel file_user sebagai tempat menyimpan dan membaca data pengguna. <br>
+- `file_pengiriman = "pengiriman.json"` untuk menginisialisasi variabel file_pengiriman sebagai tempat menyimpan dan membaca data pengiriman. <br>
+
+**List Lokasi / Data Lokasi** <br>
+<img width="1060" height="608" alt="image" src="https://github.com/user-attachments/assets/63249340-dde6-4dab-b86e-79d8163945d1" /> <img width="1060" height="646" alt="image" src="https://github.com/user-attachments/assets/db18df5c-44f7-4596-aa12-389d2eda8278" /> <br>
+: menggunakan list agar data bersifat tetap dan tidak dapat diubah. <br>
+
+**List Tarif** <br>
+<img width="1060" height="532" alt="image" src="https://github.com/user-attachments/assets/2aa5e8c0-f836-4084-8c89-987543ea55af" /> <br>
+: menggunakan list agar data bersifat tetap dan tidak dapat diubah. <br>
+
+# FUNCTION
+**Bersihkan Layar** <br>
+<img width="1060" height="532" alt="image" src="https://github.com/user-attachments/assets/131035c9-2da1-46db-904e-d73ccf4fa1fe" /> <br>
+: function ini digunakan untuk membersihkan layar terminal dengan menggunakan `os`. <br>
+
+**Baca File** <br>
+<img width="1060" height="798" alt="image" src="https://github.com/user-attachments/assets/ed54eec3-12de-47c1-8806-df415b1e4433" /> <br>
+: function ini untuk membaca data pada file json, dengan menggunakan error handling jika data tidak ditemukan maka func ini akan memuat ulang data awal dan mengembalikannya. Jika data ada maka akan dibaca dan ditampilkan. <br>
+
+**Simpan File** <br>
+<img width="1060" height="798" alt="image" src="https://github.com/user-attachments/assets/e387b97d-f49e-4d36-afee-071687c069f1" /> <br>
+: function ini mengguna json.dump untuk menyimpan data terbaru kepada file json. <br>
+
+**Format Rupiah** <br>
+<img width="1060" height="494" alt="image" src="https://github.com/user-attachments/assets/20485951-b2a6-46d1-b669-2a5448d0fdfe" /> <br>
+: function ini digunakan untuk mengubah angka selain nol ke format rupiah dengan pemisah ribuan berupa titik dan juga mengubah koma menjadi titik. function ini juga mengecek apabila inputan berupa angka nol maka akan langsung dikembalikan menjadi rupiah 0. <br>
+
+**Generate Resi / Cetak Struk** <br>
+<img width="1060" height="646" alt="image" src="https://github.com/user-attachments/assets/9484b132-919e-4bb1-aac6-d1920feb09c1" /> <br>
+: function ini digunakan untuk membuat nomor resi otomatis, dengan menggunakan perulangan while true, akan dibentuk nomor resi dengan awalan EXP dan 3 digit dibelakangnya dan diawali 0, dan apabila nomor resi sudah digunakan maka akan diganti dengan yang baru yang belum pernah tersimpan. <br>
+
+**Cari di Tuple** <br>
+<img width="1060" height="646" alt="image" src="https://github.com/user-attachments/assets/26f6af7b-6740-476d-b47f-3b0b955a1b70" /> <br>
+: function ini digunakan untuk mencari item pada daftar tuple, sistem akan terus mencari hingga menemukan kecocokan antara item dan tujuan input. `.stip()` digunakan untuk menghapus spasi di awal dan di akhir teks, `.lower()` digunakan untuk mengubah teks menjadi lowercase semua. <br>
+
+**Cetak Struk** <br>
+<img width="961" height="1600" alt="image" src="https://github.com/user-attachments/assets/ac35857a-08ff-4db6-a901-813ccf734ede" /> <br>
+: function ini 
+
+
+
+
+
+ 
+
+
+
 
 
 
