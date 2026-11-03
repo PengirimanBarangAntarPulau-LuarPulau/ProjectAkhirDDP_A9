@@ -118,13 +118,16 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
   `Kembali ke halaman awal` <br>
 
 # CODE PROGRAM
-**Import Library & Inisialisasi** <br>
-<img width="1060" height="608" alt="image" src="https://github.com/user-attachments/assets/de60b85f-fe66-4505-8dfe-61d614ce6263" /> <br>
-: pada projek ini kami menggunakan 4 library dan 2 inisialisasi data. <br>
+**Import Library** <br>
+<img width="1060" height="532" alt="library" src="https://github.com/user-attachments/assets/063e5c36-5bbd-4dcc-b80e-718d2d58808d" /><br>
+: pada projek ini kami menggunakan 4 library dan json. <br>
 - `os` kami gunakan untuk mengecek keberadaan file, menghapus file, dan membersihkan terminal. <br>
 - `json` kami gunakan untuk membaca, mengubah dan menyimpan data. <br>
 - `pwinput` kami gunakan untuk menyembunyikan karakter yang diketik pengguna pada saat menginput password. <br>
 - `prettytable` kami gunakan agar saat menampilkan data pengiriman agar lebih rapi dan enak dipandang. <br>
+- `time` kami gunakan untuk loading ketika pengguna berhasil login. <br>
+
+**Error Handling
 - `file_user = "user.json"` untuk menginisialisasi variabel file_user sebagai tempat menyimpan dan membaca data pengguna. <br>
 - `file_pengiriman = "pengiriman.json"` untuk menginisialisasi variabel file_pengiriman sebagai tempat menyimpan dan membaca data pengiriman. <br>
 
