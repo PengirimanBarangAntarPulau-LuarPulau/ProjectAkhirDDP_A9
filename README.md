@@ -209,7 +209,9 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 <img width="846" height="6306" alt="ajukan pengiriman admin" src="https://github.com/user-attachments/assets/a41ebd28-6bd3-4de9-82d1-36c7f8476d0f" /> <br>
 : function ini digunakan untuk mengajukan pengiriman oleh admin atau walk in. Menggunakan `while True` admin menginput nama pemesan, no hp berat barang, dan kota tujuan. Dengan syarat nama pemesan tidak boleh angka dan kosong, no hp tidak boleh huruf dan 0, berat tidak lebih dari 30kg dan harus berupa angka, serta kota tujuan harus ada di daftar dan tidak boleh kosong. Jika persyaratan tadi tidak terpenuhi, maka program akan kembali melooping agar admin memasukkan data baru yang sesuai. Jika sudah sesuai, maka `data_paket` akan tertambah di `file_pengiriman`. Setelahnya akan diproses total biaya pengiriman dan dicetak struk rincian biaya dan `status_bayar` juga `status_paket`. <br>
 
+**15. Membayar tagihan user** <br>
 
+: function ini digunakan untuk membayar tagihan user. Menggunakan `try-except`, pengguna menginput ID resi yang ingin dibayar. Dengan syarat ID resi harus terdaftar di tagihan milik pengguna yang sedang login dan saldo MC pengguna harus mencukupi (tidak kurang dari total biaya). Jika persyaratan tadi tidak terpenuhi atau saldo kurang, maka program akan menghentikan proses atau menampilkan pesan peringatan. Jika sudah sesuai dan dikonfirmasi dengan mengetik "y", maka `saldo` pengguna akan berkurang, data saldo di `data_use`r akan diperbarui dan disimpan ke file, serta status_pembayaran paket akan berubah menjadi `"Lunas"` beserta pembaruan status paket. Setelahnya akan dicetak struk rincian pembayaran dan sisa saldo terbaru. <br>
 
 # OUTPUT PROGRAM
 **Menu Login** <br>
