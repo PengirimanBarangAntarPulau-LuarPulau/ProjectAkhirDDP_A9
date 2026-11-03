@@ -175,6 +175,7 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 
 **Top up saldo** <br>
 <img width="1028" height="4522" alt="code-snapshot13" src="https://github.com/user-attachments/assets/3cfa3e22-ef03-463a-9d34-e5ca04eed242" /> <br>
+: function ini digunakan untuk top up saldo user. `saldo_sekarang` didapat dari data saldo dimulai dari angka 0. Menggunakan `while True` user menginput nominal rupiah yang ingin di top up, jika user menginput angka 0 atau selain angka maka program akan berhenti dan top up dibatalkan. Jika nominal yang diinput tidak berupa kelipatan dan lebih dari 11.000.000, maka top up akan dibatalkan. Setelahnya user akan konfirmasi `Nominal Bayar, MC Didapat, Total Saldo`, jika ya maka saldo user akan otomatis tertambah dan disimpan di 	`data_user`, namun jika tidak maka top up akan dibatalkan. <br>
 
 
 
