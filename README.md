@@ -167,6 +167,7 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 
 **Registrasi** <br>
 <img width="1028" height="2280" alt="code-snapshot11" src="https://github.com/user-attachments/assets/bcfddbcc-7c24-43d1-8ced-34dc65aeef83" /> <br> 
+: function ini digunakan untuk registrasi akun user yang baru, dimana meminta input username baru, jika user menginput selain alphabet maka dibatalkan dengan validasi `KeyboardInterrupt`, dan return jika username yang diinput kosong. Jika username ada di data username, maka di print `Username sudah dipakai` dan return. User diminta menginput password baru dengan syarat password harus lebih dari 4 karakter atau registrasi dibatalkan. Setelahnya `data_user` akan ditambahkan ke file dengan dictionary `username, password, role dan saldo`. <br>
 
 **Login** <br>
 <img width="1028" height="1672" alt="code-snapshot12" src="https://github.com/user-attachments/assets/b79fd3b3-48b3-40e0-ad79-4dca7fde59d4" /> <br>
