@@ -223,7 +223,7 @@ program akan menjalankan eksekusi_validasi untuk seluruh paket yang ada di dalam
 
 **17. Eksekusi validasi** <br>
 
-: function ini digunakan untuk mengeksekusi proses validasi data paket. Program memeriksa apakah berat paket lebih dari 30 kg. Jika melebihi batas, maka status paket langsung diubah menjadi `"Ditolak (Kelebihan Berat > 30 kg)"` dan proses dihentikan. Jika berat memenuhi syarat, program mengecek kota tujuan menggunakan fungsi `cari_di_tuple` ke dalam kategori `Antar Pulau` atau `Luar Pulau.` Jika masuk Antar Pulau / Luar Pulau kategori paket diatur, tarif per kg disesuaikan, total biaya dihitung dari berat 8 tarif, dan status pembayaran dicek. Jika sudah `"Lunas"`, status paket menjadi `"Diterima (Diproses)"` jika belum, statusnya menjadi `"Diterima (Menunggu Pembayaran)"`. Jika tujuan tidak ditemukan status paket diubah menjadi `"Ditolak (Tujuan Tidak Terjangkau)".` <br>
+: function ini digunakan untuk mengeksekusi proses validasi data paket. Program memeriksa apakah berat paket lebih dari 30 kg. Jika melebihi batas, maka status paket langsung diubah menjadi `"Ditolak (Kelebihan Berat > 30 kg)"` dan proses dihentikan. Jika berat memenuhi syarat, program mengecek kota tujuan menggunakan fungsi `cari_di_tuple` ke dalam kategori `Antar Pulau` atau `Luar Pulau.` Jika masuk Antar Pulau / Luar Pulau kategori paket diatur, tarif per kg disesuaikan, total biaya dihitung dari berat * tarif, dan status pembayaran dicek. Jika sudah `"Lunas"`, status paket menjadi `"Diterima (Diproses)"` jika belum, statusnya menjadi `"Diterima (Menunggu Pembayaran)"`. Jika tujuan tidak ditemukan status paket diubah menjadi `"Ditolak (Tujuan Tidak Terjangkau)".` <br>
 
 # OUTPUT PROGRAM
 **Menu Login** <br>
