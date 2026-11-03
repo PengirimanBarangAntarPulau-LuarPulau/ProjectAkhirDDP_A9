@@ -213,6 +213,15 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 <img width="846" height="3506" alt="bayar tagihan user" src="https://github.com/user-attachments/assets/080582e1-1076-43a3-856b-a1ebeb063bf3" /> <br>
 : function ini digunakan untuk membayar tagihan user. Menggunakan `try-except`, pengguna menginput ID resi yang ingin dibayar. Dengan syarat ID resi harus terdaftar di tagihan milik pengguna yang sedang login dan saldo MC pengguna harus mencukupi (tidak kurang dari total biaya). Jika persyaratan tadi tidak terpenuhi atau saldo kurang, maka program akan menghentikan proses atau menampilkan pesan peringatan. Jika sudah sesuai dan dikonfirmasi dengan mengetik "y", maka `saldo` pengguna akan berkurang, data saldo di `data_use`r akan diperbarui dan disimpan ke file, serta status_pembayaran paket akan berubah menjadi `"Lunas"` beserta pembaruan status paket. Setelahnya akan dicetak struk rincian pembayaran dan sisa saldo terbaru. <br>
 
+**16. Validasi pengiriman** <br>
+
+: function ini digunakan untuk memvalidasi pengiriman oleh admin. Dengan menggunakan antrian, program menyaring paket yang memiliki status `”Menunggu Validasi”` dan menampilkannya dalam bentuk `PrettyTable` beserta informasi nomor, ID Resi, nama pemesan, tujuan, berat barang, status bayar, dan status paketnya. <br>
+`Menu 1`<br>
+admin menginput ID resi yang ingin divalidasi (dengan syarat ID resi harus ada di dalam antrian). Jika sesuai, program akan menjalankan fungsi eksekusi_validasi pada paket tersebut, menyimpan perubahan ke file_pengiriman, dan menampilkan pesan sukses. <br>
+`Menu 2` <br>
+program akan menjalankan eksekusi_validasi untuk seluruh paket yang ada di dalam antrian secara otomatis, menyimpannya ke file, dan menampilkan pesan bahwa seluruh pengajuan berhasil divalidasi. <br>
+
+
 # OUTPUT PROGRAM
 **Menu Login** <br>
 <img width="440" height="244" alt="image" src="https://github.com/user-attachments/assets/5f7fdeed-929c-4bf6-903b-6a49635e6f4d" /> <br>
