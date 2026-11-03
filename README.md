@@ -163,8 +163,7 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 
 **Cetak Struk** <br>
 <img width="961" height="1600" alt="image" src="https://github.com/user-attachments/assets/ac35857a-08ff-4db6-a901-813ccf734ede" /> <br>
-: function ini 
-
+: function ini digunakan untuk mencetak bukti struk dengan `biaya_MC` didapat dari `total_biaya` dimulai dari angka 0. `Tarif_MC` didapat dari data `tarif_per_kg` dimulai dari angka 0. Setelahnya print struk bukti pengiriman yang berisi ID Resi, Username Akun, Nama Pemesan, Nomor HP, Kota Tujuan, Berat Barang, Jenis Rute, Tarif per kg, Total biaya MC, Status Pembayaran dan Status Pengiriman. <br>
 
 
 
