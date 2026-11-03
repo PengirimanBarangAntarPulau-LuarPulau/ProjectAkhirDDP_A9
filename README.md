@@ -171,6 +171,7 @@ Status pembayaran diubah menjadi "Lunas" (serta mengubah status pengiriman dari 
 
 **Login** <br>
 <img width="1028" height="1672" alt="code-snapshot12" src="https://github.com/user-attachments/assets/b79fd3b3-48b3-40e0-ad79-4dca7fde59d4" /> <br>
+: function ini digunakan untuk login pengguna. User menginput username, jika salah maka login dibatalkan, jika benar selanjutnya user menginput password menggunakan `pwinput` dan akan dibatalkan jika salah. Jika username dan password yang diinput benar, dan saldo tidak ditemukan di data maka `saldo = 0`. Setelahnya di print username dan role, namun jika tidak sesuai maka program akan `direturn` dan diprint status `username atau password salah`. <br>
 
 **Top up saldo** <br>
 <img width="1028" height="4522" alt="code-snapshot13" src="https://github.com/user-attachments/assets/3cfa3e22-ef03-463a-9d34-e5ca04eed242" /> <br>
